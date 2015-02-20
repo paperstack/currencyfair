@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.currencyfair.model.Trade" />
+	<class name="com.currencyfair.model.impl.TradeImpl" table="TradeService_Trade">
+		<cache usage="read-write" />
+		<id name="tradeId" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="currencyFrom" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="currencyTo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="amountSell" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="amountBuy" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="rate" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="timePlaced" type="org.hibernate.type.TimestampType" />
+		<property name="originatingCountry" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

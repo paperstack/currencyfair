@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.currencyfair.model.Trade">
+		<field name="uuid" type="String" />
+		<field name="tradeId" type="long" />
+		<field name="userId" type="long" />
+		<field name="currencyFrom" type="String" />
+		<field name="currencyTo" type="String" />
+		<field name="amountSell" type="double" />
+		<field name="amountBuy" type="double" />
+		<field name="rate" type="double" />
+		<field name="timePlaced" type="Date" />
+		<field name="originatingCountry" type="String" />
+	</model>
+</model-hints>
