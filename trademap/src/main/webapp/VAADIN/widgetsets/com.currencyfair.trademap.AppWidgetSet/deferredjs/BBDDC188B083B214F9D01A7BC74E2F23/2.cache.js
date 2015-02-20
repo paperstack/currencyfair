@@ -1,0 +1,1 @@
+$wnd.com_currencyfair_trademap_AppWidgetSet.runAsyncCallback2('Ndb(1625,1,LUd);_.uc=function $dc(){h$b((!a$b&&(a$b=new m$b),a$b),this.a.d)};oOd(Wh)(2);\n//# sourceURL=com.currencyfair.trademap.AppWidgetSet-2.js\n')
