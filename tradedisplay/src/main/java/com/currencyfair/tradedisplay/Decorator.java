@@ -11,44 +11,22 @@ import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.shared.ui.datefield.Resolution;
 
+/**
+ * Decorator for the filtering table. It allows for easy date and number criteria selection.
+ * @author Alex Rud
+ *
+ */
 @SuppressWarnings("serial")
 public class Decorator implements FilterDecorator, Serializable {
 
     @Override
     public String getEnumFilterDisplayName(Object propertyId, Object value) {
-//        if ("state".equals(propertyId)) {
-//            State state = (State) value;
-//            switch (state) {
-//            case CREATED:
-//                return "Order has been created";
-//            case PROCESSING:
-//                return "Order is being processed";
-//            case PROCESSED:
-//                return "Order has been processed";
-//            case FINISHED:
-//                return "Order is delivered";
-//            }
-//        }
-        // returning null will output default value
         return null;
     }
 
     @Override
     public Resource getEnumFilterIcon(Object propertyId, Object value) {
-//        if ("state".equals(propertyId)) {
-//            State state = (State) value;
-//            switch (state) {
-//            case CREATED:
-//                return new ThemeResource("../runo/icons/16/document.png");
-//            case PROCESSING:
-//                return new ThemeResource("../runo/icons/16/reload.png");
-//            case PROCESSED:
-//                return new ThemeResource("../runo/icons/16/ok.png");
-//            case FINISHED:
-//                return new ThemeResource("../runo/icons/16/globe.png");
-//            }
-//        }
-        return null;
+       return null;
     }
 
     @Override
@@ -62,10 +40,6 @@ public class Decorator implements FilterDecorator, Serializable {
 
     @Override
     public Resource getBooleanFilterIcon(Object propertyId, boolean value) {
-//        if ("validated".equals(propertyId)) {
-//            return value ? new ThemeResource("../runo/icons/16/ok.png")
-//                    : new ThemeResource("../runo/icons/16/cancel.png");
-//        }
         return null;
     }
 
@@ -114,8 +88,7 @@ public class Decorator implements FilterDecorator, Serializable {
     }
 
     public DateFormat getDateFormat(Object propertyId) {
-        return null;//DateFormat.getDateInstance(DateFormat.SHORT, new Locale("fi",
-                //"FI"));
+        return null;
     }
 
     @Override
