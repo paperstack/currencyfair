@@ -5,7 +5,7 @@ Welcome to the CurrencyFair test repo. A mock currency trading dashboard impleme
 This repo contains source code for a system that is used to parse JSON formatted trade data and display it back to the user as outlined in the problem description document.
 
 ###Architecture, Implementation, and Functionality
-Because of the open ended nature of this project I have chosen to leverage the [Lifaray Portal Framework](www.liferay.com). Liferay is an open source Java based portal implementation that is based on other open source technologies such as Spring and Hibernate. As portlet container, it allows the developer to write and deploy portlets which offer small, distinct, and focused units of functionality (if so designed/implemented). My reasons for choosing Liferay were as follows:
+Because of the open ended nature of this project I have chosen to leverage the [Liferay Portal Framework](www.liferay.com). Liferay is an open source Java based portal implementation that is based on other open source technologies such as Spring and Hibernate. As portlet container, it allows the developer to write and deploy portlets which offer small, distinct, and focused units of functionality (if so designed/implemented). My reasons for choosing Liferay were as follows:
 
 * It provides a convenient modeling framework. A data object (in this case a Trade) can be modeled in an XML file and a code generator will create all the Spring/Hibernate wiring as well as sql scripts create the necessary database tables. It will also create the model classes and stub service methods where business logic can be implemented
 
@@ -42,7 +42,10 @@ In addition to the portlets there is a service layer responsible for data proces
 
 * /TradeService/TradeService-portlet/src/test/java/com/currencyfair/test/TradeTest.java - This is a basic unit test meant to be a jumping off point for further unit test development. It will check the locale lookup functionality in the TradeLocalServiceImpl class. Due to the various wiring mechanisms of the Liferay framework setting up additional JUnit tests was too time consuming for the scope of this project
 
+* /TradeService/TradeService-portlet/src/main/webapp/WEB-INF/service.xml - This file contains the model description used to generate the wiring classes.
+
 ####Notes and assumptions
+* JSON data will be in the following format: '{"userId": "134265", "currencyFrom": "EUR", "currencyTo": "USD", "amountSell": 100000, "amountBuy": 74710.00, "rate": 0.7471, "timePlaced" : "14-JAN-15 10:27:44", "originatingCountry" : "US"}'
 * The date in the trade is in day-month-year format. As the example date was 14-Jan-15 its possible that it could be in year-month-day format but the former seemed to make more sense.
 
 * rate will always be correct. An incorrect rate will not be validated and will be accepted by system. 
@@ -52,7 +55,7 @@ In addition to the portlets there is a service layer responsible for data proces
 Direct webservice call url: http://thepaperstack.com/api/jsonws/TradeService-portlet.trade/add-trade/ 
 
 Curl Example:
-curl http://thepaperstack.com/api/jsonws/TradeService-portlet.trade/add-trade \
+curl http://thepaperstack.com/api/jsonws/TradeService-portlet.trade/add-trade 
   -d json='{"userId": "134265", "currencyFrom": "EUR", "currencyTo": "USD", "amountSell": 100000, "amountBuy": 74710.00, "rate": 0.7471, "timePlaced" : "14-JAN-15 10:27:44", "originatingCountry" : "US"}'
   
  Indirect webservice call url: http://thepaperstack.com/web/guest/dummy?p_p_id=jsonlistener_WAR_JSONListenerportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1
